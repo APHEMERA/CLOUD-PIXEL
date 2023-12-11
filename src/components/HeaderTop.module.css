@@ -1,0 +1,29 @@
+.headerTop {
+  display: flex;
+  justify-content: space-between;
+  background-color: #000814;
+  color: #fff;
+  align-items: center;
+  padding: 2rem 3rem;
+}
+.logo {
+}
+.logo > a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+.nav {
+  list-style: none;
+  display: flex;
+}
+.navItem a {
+  text-decoration: none;
+  color: #fff;
+  padding: 1rem;
+  font-size: 1.2rem;
+}
+.plus a {
+  color: #ffc300;
+}

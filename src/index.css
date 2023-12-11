@@ -1,13 +1,50 @@
-body {
+*,
+*::after,
+*::before {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  font-size: 62.5%;
+  font-family: "Notosans";
+}
+@font-face {
+  font-family: "NotoSans";
+  src: url("./fonts/NotoSans-ExtraLight.ttf");
+  font-style: normal;
+  font-weight: 200;
+}
+@font-face {
+  font-family: "NotoSans";
+  src: url("./fonts/NotoSans-Light.ttf");
+  font-style: normal;
+  font-weight: 300;
+}
+@font-face {
+  font-family: "NotoSans";
+  src: url("./fonts/NotoSans-Regular.ttf");
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "NotoSans";
+  src: url("./fonts/NotoSans-SemiBold.ttf");
+  font-style: normal;
+  font-weight: 500;
+}
+@font-face {
+  font-family: "NotoSans";
+  src: url("./fonts/NotoSans-Bold.ttf");
+  font-style: normal;
+  font-weight: 600;
+}
+@font-face {
+  font-family: "NotoSans";
+  src: url("./fonts/NotoSans-ExtraBold.ttf");
+  font-style: normal;
+  font-weight: 700;
+}
+body {
+  background-color: #000814;
 }
