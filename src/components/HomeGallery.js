@@ -1,4 +1,4 @@
-import styles from "./Gallery.module.css";
+import styles from "./HomeGallery.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { faBookmark } from "@fortawesome/free-regular-svg-icons";

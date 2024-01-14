@@ -1,14 +1,17 @@
 import { Fragment } from "react";
 import "./App.css";
 import Header from "./components/Header";
-import Gallery from "./components/Gallery";
-
+import Gallery from "./pages/Gallery";
+import Home from "./pages/Home";
+import { Routes, Route } from "react-router-dom";
 function App() {
   return (
-    <Fragment>
-      <Header />
-      <Gallery />
-    </Fragment>
+    <div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/gallery" element={<Gallery />} />
+      </Routes>
+    </div>
   );
 }
 
