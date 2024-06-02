@@ -1,25 +1,29 @@
 .parent {
   margin: 3rem;
+  display: flex;
+  flex-wrap: wrap;
 }
 .container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  width: 100%;
-  gap: 3rem;
+  flex: 33.3%;
+  max-width: 33.3%;
+  padding: 0 1rem;
 }
 .image {
   width: 100%;
 }
 .photo {
   position: relative;
+  margin-top: 1rem;
 }
 .photoIcons {
   position: absolute;
   padding: 2rem;
+  z-index: 3;
 }
 .photoIcon {
   display: flex;
   justify-content: center;
+
   align-items: center;
   background-color: #fff;
   padding: 1rem;
@@ -57,4 +61,13 @@
   font-size: 2rem;
   font-weight: 600;
   color: #fff;
+}
+.videoItem {
+  margin: 1rem 0;
+}
+.video {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: block;
 }

@@ -5,7 +5,7 @@ import { faBookmark } from "@fortawesome/free-regular-svg-icons";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useReducer, useState } from "react";
 import useOnScreen from "../hooks/useOnScreen";
-
+import { Link, useLocation } from "react-router-dom";
 const reducer = (prevState, action) => {
   if (action.type === "STATE_DATA") {
     if (prevState.state != null && prevState) {
@@ -22,11 +22,16 @@ const reducer = (prevState, action) => {
     state: [],
   };
 };
-const Gallery = () => {
+const Gallery = ({ data }) => {
   const [isHovering, setIsHovering] = useState(false);
   const [stateData, dispatch] = useReducer(reducer, { state: null });
   const [page, setPage] = useState(1);
-  const url = `https://api.pexels.com/v1/search?query=nature&page=${page}`;
+
+  const location = useLocation();
+  let url = `https://api.pexels.com/v1/search?query=nature&page=${page}`;
+  if (location.pathname == "/current") {
+    url = `https://api.pexels.com/v1/search?query=${data && data.alt}&page=${page}`;
+  }
   const fetchData = async () => {
     try {
       const response = await fetch(url, {
@@ -37,9 +42,7 @@ const Gallery = () => {
         },
       });
       const data = await response.json();
-      console.log("data render");
       dispatch({ type: "STATE_DATA", state: data });
-      console.log(data);
     } catch (err) {
       console.log(err);
     }
@@ -64,6 +67,23 @@ const Gallery = () => {
   const handleMouseOut = () => {
     setIsHovering(false);
   };
+
+  const addItemToFav = (e, data) => {
+    e.stopPropagation();
+    e.preventDefault();
+    const url = document.getElementById(data.id).href;
+    const id = data.id;
+    const title = data.alt;
+    const image = data.src.original;
+    const item = {
+      id: id,
+      title: title,
+      image: image,
+      url: url,
+    };
+    localStorage.setItem(`cloudPixel[favItem]${id}`, JSON.stringify(item));
+  };
+
   return (
     <div className={styles.parent}>
       <div className={styles.container}>
@@ -72,23 +92,28 @@ const Gallery = () => {
             (st) =>
               st &&
               st.photos.map((photo) => (
-                <a href="#" ref={measureRef}>
-                  <div className={styles.photo} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
+                <Link reloadDocument to={{ pathname: "/current", search: `id=${photo.id}` }} id={photo.id}>
+                  <div
+                    ref={measureRef}
+                    className={styles.photo}
+                    onMouseOver={handleMouseOver}
+                    onMouseOut={handleMouseOut}
+                  >
                     <img src={photo.src.portrait} className={styles.image} />
                     {isHovering && (
                       <div>
                         <div className={`${styles.photoIcons} ${styles.topIcons}`}>
-                          <div className={`${styles.photoIcon}`}>
-                            <FontAwesomeIcon icon={faHeart} style={{ color: "#000" }} size="2xl" />
-                          </div>
-                          <div className={`${styles.photoIcon}`}>
-                            <FontAwesomeIcon icon={faBookmark} style={{ color: "#000" }} size="2xl" />
-                          </div>
+                          <button className={`${styles.photoIcon}`} onClick={(e) => addItemToFav(e, photo)}>
+                            <FontAwesomeIcon icon={faHeart} style={{ color: "#000" }} size="1xl" />
+                          </button>
+                          <button className={`${styles.photoIcon}`}>
+                            <FontAwesomeIcon icon={faBookmark} style={{ color: "#000" }} size="1xl" />
+                          </button>
                         </div>
                         <div className={`${styles.photoIcons} ${styles.bottomIcons}`}>
-                          <div className={`${styles.photoIcon}`}>
-                            <FontAwesomeIcon icon={faDownload} style={{ color: "#000" }} size="2xl" />
-                          </div>
+                          <button className={`${styles.photoIcon}`}>
+                            <FontAwesomeIcon icon={faDownload} style={{ color: "#000" }} size="1xl" />
+                          </button>
                         </div>
                         <div className={styles.photographerInfo}>
                           <a href="#">
@@ -101,7 +126,7 @@ const Gallery = () => {
                       </div>
                     )}
                   </div>
-                </a>
+                </Link>
               ))
           )}
       </div>

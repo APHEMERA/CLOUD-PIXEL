@@ -1,0 +1,57 @@
+.currentMainHeaderSection {
+  margin: 0rem 3rem;
+  padding: 3rem;
+  background-color: #000814;
+}
+.titleBox h1 {
+  color: #ffc300;
+  font-size: 2.5rem;
+}
+.buttonsContainer {
+  margin-top: 2rem;
+}
+.buttonsContainer > button {
+  padding: 1.3rem 2rem;
+  margin-right: 1rem;
+  outline: none;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+.btnCollect {
+  font-size: 1.7rem;
+  font-weight: 600;
+  background: none;
+  color: #fff;
+  border: 1px solid #fff;
+}
+.btnCollect > svg {
+  margin-right: 1rem;
+}
+.btnCollect:hover {
+  background-color: #fff;
+  color: #000814;
+}
+.btnLike {
+  font-size: 1.7rem;
+  font-weight: 600;
+  border: 1px solid #d40a0a;
+  background: none;
+  color: #d40a0a;
+}
+.btnLike > svg {
+  margin-right: 1rem;
+}
+.btnLike:hover {
+  background-color: #d40a0a;
+  color: #000814;
+}
+.btnDownload {
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #00d15e;
+  border: none;
+}
+.btnDownload > svg {
+  margin-left: 1rem;
+}

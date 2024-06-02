@@ -1,0 +1,55 @@
+.filterSection {
+  padding: 0 3rem;
+}
+.filterContainer {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+}
+.filterType {
+  position: relative;
+  width: 30%;
+  cursor: pointer;
+}
+.filterTypeText {
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  font-weight: 500;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+.filterTypeText > input {
+  width: 100%;
+  border: none;
+  outline: none;
+}
+.filterOptions {
+  position: absolute;
+  width: 100%;
+  background-color: #fff;
+  top: 4.5rem;
+  border-radius: 0.5rem;
+  z-index: 5;
+}
+.filterOptionsList {
+  padding: 1rem 0rem;
+  list-style: none;
+}
+.filterOption {
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+}
+.filterOption:hover {
+  background-color: #ebeaea;
+}
+.colorsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.colorBox {
+  width: 3.5rem;
+  height: 2rem;
+}

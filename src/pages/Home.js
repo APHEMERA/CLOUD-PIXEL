@@ -1,11 +1,11 @@
 import Header from "../components/Header";
-import Gallery from "../components/HomeGallery";
+import HomeGallery from "../components/HomeGallery";
 import { Fragment } from "react";
 const Home = () => {
   return (
     <Fragment>
       <Header />
-      <Gallery />
+      <HomeGallery />
     </Fragment>
   );
 };

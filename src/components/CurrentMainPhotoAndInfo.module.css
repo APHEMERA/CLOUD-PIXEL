@@ -1,0 +1,55 @@
+.currentMainPhoto {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 3rem 2rem 3rem;
+}
+.currentMainPhoto > img {
+  max-width: 80vw;
+  max-height: 80vh;
+}
+.underPhotoContent {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 3rem;
+}
+.authorInfo > h3 {
+  color: #fff;
+  font-size: 2rem;
+}
+.authorInfo > p {
+  color: #b1b1b1;
+  font-size: 1.5rem;
+}
+.buttonsContainer > button {
+  padding: 1.3rem 2rem;
+  margin-right: 1rem;
+  outline: none;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+.btnShare > svg {
+  margin-right: 1rem;
+}
+.btnShare {
+  font-size: 1.7rem;
+  font-weight: 600;
+  background: none;
+  color: #fff;
+  border: 1px solid #fff;
+}
+.btnFlag {
+  font-size: 1.7rem;
+  font-weight: 600;
+  background: none;
+  color: #750000;
+  border: 1px solid #750000;
+}
+.similarContainer {
+  margin: 1rem 3rem;
+}
+.similarText {
+  color: #fff;
+  font-size: 3rem;
+  font-weight: 500;
+}

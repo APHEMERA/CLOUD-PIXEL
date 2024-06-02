@@ -1,0 +1,24 @@
+.underheaderContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.underheaderH1 {
+  color: #fff;
+  font-weight: 400;
+  font-size: 4rem;
+  padding: 4rem;
+}
+.underheaderBtn {
+  background: none;
+  color: #ffc300;
+  border: 1px solid #ffc300;
+  outline: none;
+  padding: 1rem;
+  margin-right: 4rem;
+  cursor: pointer;
+}
+.underheaderBtn:hover {
+  color: #000814;
+  background-color: #ffc300;
+}
